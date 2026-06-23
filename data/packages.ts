@@ -1,0 +1,169 @@
+export interface TourPackage {
+  id: number;
+  name: string;
+  price: number;
+  route: string;
+  duration: string;
+  rating: number;
+  description: string;
+  includes: string[];
+  image: string;
+}
+
+export interface PopularRoute {
+  id: number;
+  name: string;
+  description: string;
+  duration: string;
+  image: string;
+}
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  avatar: string;
+  rating: number;
+  text: string;
+  trip: string;
+}
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  author: string;
+}
+
+export const tourPackages: TourPackage[] = [
+  {
+    id: 1,
+    name: "Paket Lava Tour Basic",
+    price: 350000,
+    route: "Kaliurang → Museum Sisa Hartaku → Lava Bantal",
+    duration: "3 Jam",
+    rating: 4.5,
+    description: "Nikmati pengalaman wisata lava menggunakan Jeep dengan rute pendek yang cocok untuk pemula.",
+    includes: ["Jeep terbuka", "Guide lokal", "Air mineral", "Dokumentasi"],
+    image: "/images/package/basic.jpg",
+  },
+  {
+    id: 2,
+    name: "Paket Lava Tour Medium",
+    price: 500000,
+    route: "Kaliurang → Museum Sisa Hartaku → Lava Bantal → Bunker Kaliadem",
+    duration: "5 Jam",
+    rating: 4.8,
+    description: "Jelajahi lebih banyak spot menarik dengan rute yang lebih panjang dan pemandangan spektakuler.",
+    includes: ["Jeep terbuka", "Guide lokal", "Air mineral", "Dokumentasi", "Makan siang"],
+    image: "/images/package/medium.jpg",
+  },
+  {
+    id: 3,
+    name: "Paket Lava Tour Full Day",
+    price: 750000,
+    route: "Kaliurang → Museum Sisa Hartaku → Lava Bantal → Bunker Kaliadem → Puncak Watu Gajah",
+    duration: "8 Jam",
+    rating: 4.9,
+    description: "Pengalaman lengkap menjelajahi seluruh kawasan Merapi dengan Jeep wisata yang nyaman.",
+    includes: ["Jeep terbuka", "Guide lokal", "Air mineral", "Dokumentasi", "Makan siang", "Coffee break"],
+    image: "/images/package/fullday.jpg",
+  },
+  {
+    id: 4,
+    name: "Paket Sunrise Adventure",
+    price: 600000,
+    route: "Kaliurang → Gardu Pandang → Lava Bantal → Puncak Watu Gajah",
+    duration: "6 Jam",
+    rating: 4.7,
+    description: "Saksikan matahari terbit dari lereng Merapi dengan Jeep, pengalaman yang tak terlupakan.",
+    includes: ["Jeep terbuka", "Guide lokal", "Air mineral", "Dokumentasi", "Sarapan", "Lighting equipment"],
+    image: "/images/package/sunrise.jpg",
+  },
+];
+
+export const popularRoutes: PopularRoute[] = [
+  {
+    id: 1,
+    name: "Kaliurang",
+    description: "Rute klasik melewati pemukiman dan hamparan pasir lava yang membeku.",
+    duration: "2 Jam",
+    image: "/images/rute/kaliurang.webp",
+  },
+  {
+    id: 2,
+    name: "Bunker Kaliadem",
+    description: "Jelajahi bunker bersejarah yang menjadi saksi erupsi Merapi 2006.",
+    duration: "3 Jam",
+    image: "/images/rute/bunker.webp",
+  },
+  {
+    id: 3,
+    name: "Kali Kuning",
+    description: "Nikmati panorama Merapi dari ketinggian dengan pemandangan yang menakjubkan.",
+    duration: "4 Jam",
+    image: "/images/rute/kalikuning.webp",
+  },
+  {
+    id: 4,
+    name: "Museum Sisa Hartaku",
+    description: "Melihat langsung rumah-rumah yang hancur terkena dampak erupsi Merapi.",
+    duration: "1.5 Jam",
+    image: "/images/rute/museum-sisa-hartaku.webp",
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Budi Santoso",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80",
+    rating: 5,
+    text: "Pengalaman yang luar biasa! Jipnya nyaman, guide-nya ramah dan informatif. Sangat merekomendasikan Paket Full Day untuk pemandangan terbaik.",
+    trip: "Paket Lava Tour Full Day",
+  },
+  {
+    id: 2,
+    name: "Siti Rahmawati",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80",
+    rating: 5,
+    text: "Sunrise Adventure benar-benar magical! Melihat matahari terbit dari atas Jeep dengan latar Merapi sungguh tak terlupakan.",
+    trip: "Paket Sunrise Adventure",
+  },
+  {
+    id: 3,
+    name: "Ahmad Fauzi",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80",
+    rating: 4,
+    text: "Tour yang seru dan menantang. Anak-anak saya sangat senang. Harga terjangkau untuk pengalaman yang luar biasa.",
+    trip: "Paket Lava Tour Medium",
+  },
+];
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 1,
+    title: "Tips Aman Lava Tour di Merapi",
+    excerpt: "Persiapkan diri Anda dengan baik sebelum memulai petualangan Lava Tour di lereng Merapi.",
+    image: "/images/rute/kaliurang.webp",
+    date: "15 Juni 2026",
+    author: "Tim Jeep Lava Tour",
+  },
+  {
+    id: 2,
+    title: "Sejarah Erupsi Merapi & Dampaknya",
+    excerpt: "Mengenal lebih dekat sejarah erupsi Gunung Merapi dan bagaimana wisata edukasi berkembang di sekitarnya.",
+    image: "/images/rute/bunker.webp",
+    date: "10 Juni 2026",
+    author: "Tim Jeep Lava Tour",
+  },
+  {
+    id: 3,
+    title: "5 Spot Foto Terbaik di Lava Tour",
+    excerpt: "Temukan spot-spot terbaik untuk mengabadikan momen petualangan Jeep Lava Tour Merapi Anda.",
+    image: "/images/rute/kalikuning.webp",
+    date: "5 Juni 2026",
+    author: "Tim Jeep Lava Tour",
+  },
+];

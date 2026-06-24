@@ -21,10 +21,10 @@ interface BookingForm {
 }
 
 const packageOptions = [
-  "Paket Lava Tour Basic",
+  "Paket Lava Tour Sunrise",
+  "Paket Lava Tour Short",
   "Paket Lava Tour Medium",
-  "Paket Lava Tour Full Day",
-  "Paket Sunrise Adventure",
+  "Paket Lava Tour Long",
 ];
 
 export default function BookingModal({
@@ -69,7 +69,7 @@ export default function BookingModal({
         `*Catatan:* ${form.notes || "-"}\n\n` +
         `Mohon konfirmasi ketersediaan dan detail pembayaran. Terima kasih! 🙏`
     );
-    window.open(`https://wa.me/6281234567890?text=${message}`, "_blank");
+    window.open(`https://wa.me/6282323337760?text=${message}`, "_blank");
     onClose();
   };
 

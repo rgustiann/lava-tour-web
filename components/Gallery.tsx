@@ -23,7 +23,7 @@ const galleryImages = [
   {
     id: 4,
     src: "/images/package/fullday.jpg",
-    alt: "Petualangan Jeep Full Day",
+    alt: "Petualangan Jeep Long",
   },
   {
     id: 5,

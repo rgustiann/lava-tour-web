@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { tourPackages, TourPackage } from "@/data/packages";
 import BookingModal from "@/components/BookingModal";
+import PackageDetailModal from "@/components/PackageDetailModal";
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -26,11 +27,25 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function TourPackages() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [detailModalOpen, setDetailModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<TourPackage | null>(null);
 
   const openModal = (pkg: TourPackage) => {
     setSelectedPackage(pkg);
     setModalOpen(true);
+  };
+
+  const openDetailModal = (pkg: TourPackage) => {
+    setSelectedPackage(pkg);
+    setDetailModalOpen(true);
+  };
+
+  const handleBookFromDetail = (pkg: TourPackage) => {
+    setDetailModalOpen(false);
+    // Slight timeout so that the detail modal transitions out nicely before booking modal opens
+    setTimeout(() => {
+      openModal(pkg);
+    }, 200);
   };
 
   return (
@@ -63,7 +78,8 @@ export default function TourPackages() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative flex flex-col rounded-2xl bg-white border border-stone-200 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all"
+                onClick={() => openDetailModal(pkg)}
+                className="group relative flex flex-col rounded-2xl bg-white border border-stone-200 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all cursor-pointer"
               >
                 <div className="relative overflow-hidden rounded-t-2xl aspect-3/2">
                   <Image
@@ -114,7 +130,10 @@ export default function TourPackages() {
                     </div>
                     <button
                       id={`book-pkg-${pkg.id}`}
-                      onClick={() => openModal(pkg)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openModal(pkg);
+                      }}
                       className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-hover active:scale-95 transition-all"
                     >
                       Pesan
@@ -126,6 +145,13 @@ export default function TourPackages() {
           </div>
         </div>
       </section>
+
+      <PackageDetailModal
+        isOpen={detailModalOpen}
+        onClose={() => setDetailModalOpen(false)}
+        pkg={selectedPackage}
+        onBook={handleBookFromDetail}
+      />
 
       <BookingModal
         isOpen={modalOpen}

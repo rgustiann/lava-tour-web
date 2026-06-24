@@ -16,10 +16,10 @@ const footerLinks = {
     { label: "Status", href: "#" },
   ],
   tour: [
-    { label: "Paket Basic", href: "#" },
+    { label: "Paket Sunrise", href: "#" },
+    { label: "Paket Short", href: "#" },
     { label: "Paket Medium", href: "#" },
-    { label: "Paket Full Day", href: "#" },
-    { label: "Sunrise Adventure", href: "#" },
+    { label: "Paket Long", href: "#" },
   ],
 };
 
